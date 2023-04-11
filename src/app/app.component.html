@@ -1,27 +1,18 @@
 <div class="container">
-  <h1>Angular Components</h1>
-  <h2>Sub-header</h2>
-  <app-post-form
-    (onAdd)="updatePosts($event)"
-  ></app-post-form>
-
-  <hr />
-
-  <app-post
-    *ngFor="let myPost of posts"
-    [myPost]="myPost"
-    (onRemove)="removePost($event)"
-  >
-    <div #info>
-      <small
-              *ngIf="myPost.text.length > 10; else short"
-      >Пост длинный</small>
-      <ng-template #short>
-        <small>Пост короткий</small>
-      </ng-template>
+    <h1>Список заданий на сегодня</h1>
+    <app-task-form
+            (onAdd)="addTask($event)"
+    ></app-task-form>
+    <div class="card">
+        <button class="btn" (click)="filterTask(null)">Показать все</button>
+        <button class="btn" (click)="filterTask(true)">Показать выполненные</button>
+        <button class="btn" (click)="filterTask(false)">Показать не выполненные</button>
+        <app-task
+                *ngFor="let task of filteredItems"
+                [task]="task"
+                (onRemove)="removeTask($event)"
+        ></app-task>
     </div>
-  </app-post>
-
 </div>
 
 

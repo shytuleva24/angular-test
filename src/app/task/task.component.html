@@ -1,0 +1,10 @@
+<div class="card" [style.backgroundColor]="task.isDone ? '#68e088' : 'transparent'">
+    <p>{{task.title}}</p>
+    <p>
+        <button class="btn" (click)="removeTask()">Удалить</button>
+        <button class="btn" *ngIf="!task.isDone" (click)="task.isDone = true">Выполнено</button>
+        <button class="btn" *ngIf="task.isDone" (click)="task.isDone = false">Не выполнено</button>
+
+    </p>
+
+</div>

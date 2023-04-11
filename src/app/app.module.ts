@@ -5,12 +5,14 @@ import {AppComponent} from './app.component';
 import {FormsModule} from '@angular/forms';
 import {PostFormComponent} from './post-form/post-form.component';
 import {PostComponent} from './post/post.component';
+import { TaskComponent } from './task/task.component';
+import { TaskFormComponent } from './task-form/task-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PostFormComponent,
-    PostComponent,
+    TaskComponent,
+    TaskFormComponent,
   ],
   imports: [
     BrowserModule,
